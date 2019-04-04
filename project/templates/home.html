@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{%static 'css/custom.css'%}">
+
+
+{% block content %}
+<div class="row">
+    {% for Project in products %}
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+        <img src="{{ Project.photo }}" class="card-img-top" style="height:200px;width:100%">
+        <div class="card-body">
+            <h5 class="card-title">{{Project.name}}</h5>
+            <p class="card-text">{{Project.age}}<br>
+            {{ Project.qualifications }}
+            </p>
+            <a href="{% url 'detail' %}" class="btn btn-primary">Get Data</a>
+        </div>
+    </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+

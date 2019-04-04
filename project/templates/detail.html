@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{ static, 'css/custom.css' }">
+
+{% block detail %}
+
+<img src="{{ Project.photo }}" class = "ph">
+
+{% endblock %}
